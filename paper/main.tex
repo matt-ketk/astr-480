@@ -1,5 +1,5 @@
-\documentclass[12pt]{article}
-%\documentclass{article}
+\documentclass{article}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1.0in]{geometry}
 \usepackage[version=4]{mhchem}
@@ -15,9 +15,9 @@
 \DeclareSIUnit\gauss{G}
 \DeclareSIUnit\erg{erg}
 
-\title{\vspace{-2em} {\bf Observation of Eclipsing Binaries}}
-\author{Matt Ketkaroonkul}
-\date{June 6, 2023}
+\title{\vspace{-2em} {\bf Light Curve Observations of Eclipsing Contact Binaries}}
+\author{Matt Ketkaroonkul, Thomas Sweeney, \\ Peter Zhou, Mikhail Mazuzakov}
+\date{June 4, 2023}
 
 \DeclareSIUnit\day{d}
 \begin{document}
@@ -25,15 +25,19 @@
 \maketitle
 
 \section{Abstract}
+\section{Introduction}
 
-This paper aims to observe two eclipsing binary systems, V* TZ Boo and V* CC Com.
-\section{Data and Observations}
-Quantifying light curves for eclipsing binaries is an essential task in the field of astrophysics, enabling the detailed study of these fascinating systems. Eclipsing binaries consist of two stars orbiting each other in close proximity, periodically passing in front of each other, leading to a characteristic variation in their observed brightness over time. By accurately measuring and analyzing these light curves, astronomers can derive fundamental parameters of the binary system, such as the stellar masses, radii, and orbital properties.
-We observed two such star systems: V* TZ Boo and V* CC Com. We gather light curve data of each star system for time series analysis to compare with existing data of the eclipsing binaries. Given our observing time constraints with the APO ARCSAT, we picked the eclipsing binary systems for their short orbital period of around 0.3 d. For instance, V* TZ Boo has a period of 0.297 d and V* CC Com has a period of 0.221 d.
-We determine the orbital period of the eclipsing binaries by using curve fitting methods. Methods include Markov Chain Monte-Carlo (MCMC) and Lomb-Scargle periodograms. From determining the orbital motions of the eclipsing binaries, we are able to constrain the masses of the constituent stars. This paper will also outline the statistical uncertainties and limitations of our observation project. 
+Eclipsing Contact Binaries consist of two stars orbiting each other in close proximity, periodically passing in front of each other, leading to a characteristic variation in their observed brightness over time. Contact Binaries orbit so close to one another that their Roche lobes overlap, allowing the exchange of stellar material. Quantifying light curves for eclipsing binaries is an essential task in the field of astrophysics, enabling the detailed study of these fascinating systems. By accurately measuring and analyzing these light curves, astronomers can derive fundamental parameters of the binary system, such as the stellar masses, radii, and orbital parameters. More importantly, the study of eclipsing contact binaries has greater implications for understanding the general behavior of binary star systems, as well as stellar evolution and structure.
 
-\section{Methods}
+Understanding the behavior of binary star systems through eclipsing binary observations can aid our understanding of stellar structure. Many binary star systems have close orbits, where the constituent stars exchange stellar matter. This presents a unique opportunity to study stellar atmospheres under continual disturbances by the gravitational pulls of the closely-orbiting companion star. The rapid rotation of these stars also suggests interesting magnetic field and stellar wind behaviors present in these binary star systems \cite{2001icbs.book.....H}. Close binary star systems can also influence the stellar evolution of each constituent star. As posited by Yakut and Eggleton (2005), at longer timescales, close binary star systems may evolve such that the masses of the constituent stars equalize. As the stars’ masses substantially change, their stellar evolution path may have drastically changed as well \cite{2005ApJ...629.1055Y}.
+
+	TZ Boo is an eclipsing contact binary system located in the Boötes constellation. Its constituent stars are both G type stars. The other system we observed, CC Com, is located in the Coma Berenices constellation and consists of K type stars. The purpose of our project is to observe light curves for each of the star systems and determine their orbital properties for comparison with previous data and analyses of the eclipsing contact binaries. Given our time constraints with the Apache Point Observatory (APO) ARCSAT, we picked these eclipsing binary systems for their short orbital period of around 0.3 d. TZ Boo has a period of 0.297 d and CC Com has a period of 0.221 d. 
+
+    We begin with describing the setup and circumstances of our observation project, followed by our process in data reduction. We then analyze our results to compare with previous research, including the results from Yakut and Eggleton (2005) \cite{2005ApJ...629.1055Y}. We conclude our paper by pointing out sources of error, which inform goals to be achieved in future work.
+
+\section{Observations and Data}
+\section{Reduction Methods}
 \section{Discussion of Results}
-\section{Conclusion}
-\section{Acknowledgements}
+\section{Conclusion and Further Work}
+\section{References}
 \end{document}
