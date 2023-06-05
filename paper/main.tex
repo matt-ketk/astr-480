@@ -33,13 +33,18 @@
 \maketitle
 
 \section{Abstract}
+
+We analyze the orbital periods of eclipsing contact binaries V* TZ Boo and V* CC Com using the Apache Point Observatory (APO) 3.5 m ARCSAT and compare with previous findings. Exposures were taken in a V filter for 15 seconds in 30 minute intervals. A Taylor Expansion approximation of a sinusoid was applied to calculate the orbital periods. We determine an orbital period of 0.29 d for CC Com and 0.37 d for TZ Boo.
+
+Time series analysis of eclipsing binary stars has implications for studying the stellar structure of binary stars, especially contact binary stars. Determining the orbital period and its rate of change over time can provide insight into the mass exchange between constituent stars and how the change in mass may affect the evolution of said constituent stars.
+
 \section{Introduction}
 
 Eclipsing Contact Binaries consist of two stars orbiting each other in close proximity, periodically passing in front of each other, leading to a characteristic variation in their observed brightness over time. Contact Binaries orbit so close to one another that their Roche lobes overlap, allowing the exchange of stellar material. Quantifying light curves for eclipsing binaries is an essential task in the field of astrophysics, enabling the detailed study of these fascinating systems. By accurately measuring and analyzing these light curves, astronomers can derive fundamental parameters of the binary system, such as the stellar masses, radii, and orbital parameters. More importantly, the study of eclipsing contact binaries has greater implications for understanding the general behavior of binary star systems, as well as stellar evolution and structure.
 
 Understanding the behavior of binary star systems through eclipsing binary observations can aid our understanding of stellar structure. Many binary star systems have close orbits, where the constituent stars exchange stellar matter. This presents a unique opportunity to study stellar atmospheres under continual disturbances by the gravitational pulls of the closely-orbiting companion star. The rapid rotation of these stars also suggests interesting magnetic field and stellar wind behaviors present in these binary star systems \cite{2001icbs.book.....H}. Close binary star systems can also influence the stellar evolution of each constituent star. As posited by Yakut and Eggleton (2005), at longer timescales, close binary star systems may evolve such that the masses of the constituent stars equalize. As the stars’ masses substantially change, their stellar evolution path may have drastically changed as well \cite{2005ApJ...629.1055Y}.
 
-	TZ Boo is an eclipsing contact binary system located in the Boötes constellation. Its constituent stars are both G type stars. The other system we observed, CC Com, is located in the Coma Berenices constellation and consists of K type stars. The purpose of our project is to observe light curves for each of the star systems and determine their orbital properties for comparison with previous data and analyses of the eclipsing contact binaries. Given our time constraints with the Apache Point Observatory (APO) ARCSAT, we picked these eclipsing binary systems for their short orbital period of around 0.3 d. TZ Boo has a period of 0.297 d and CC Com has a period of 0.221 d. 
+TZ Boo is an eclipsing contact binary system located in the Boötes constellation. Its constituent stars are both G type stars. The other system we observed, CC Com, is located in the Coma Berenices constellation and consists of K type stars. The purpose of our project is to observe light curves for each of the star systems and determine their orbital properties for comparison with previous data and analyses of the eclipsing contact binaries. Given our time constraints with the Apache Point Observatory (APO) ARCSAT, we picked these eclipsing binary systems for their short orbital period of around 0.3 d. TZ Boo has a period of 0.297 d and CC Com has a period of 0.221 d \cite{2005ApJ...629.1055Y}. 
 
     We begin with describing the setup and circumstances of our observation project, followed by our process in data reduction. We then analyze our results to compare with previous research, including the results from Yakut and Eggleton (2005) \cite{2005ApJ...629.1055Y}. We conclude our paper by pointing out sources of error, which inform goals to be achieved in future work.
 
@@ -60,21 +65,29 @@ For image noise reduction, we took 7 bias frames, 4 dark frames with 900 seconds
 \end{enumerate}
 
 \subsection{Data Reduction}
-We considered a few photometry methods to determine the relative flux from the processed CCD images. These include the built-in photometric flux from the \codeword{DAOStarFinder} function from the \codeword{photutils.detection} package, and the Aperture (AP) and Point Spread Function (PSF) photometry methods from the same \codeword{photutils} package. From the \codeword{photutils.detection} documentation, the flux reading from \codeword{DAOStarFinder} involves the object flux calculated as the peak density in the convolved image divided by the detection threshold. AP photometry involves applying a circular mask region marking where pixels should be counted and included in the AP flux reading. 
+We considered a few photometry methods to determine the relative flux from the processed CCD images. These include the built-in photometric flux from the \codeword{DAOStarFinder} function from the \codeword{photutils.detection} package, and the Aperture (AP) and Point Spread Function (PSF) photometry methods from the same \codeword{photutils} package. From the \codeword{photutils.detection} documentation, the flux reading from \codeword{DAOStarFinder} involves the object flux calculated as the peak density in the convolved image divided by the detection threshold. AP photometry involves applying a circular mask region marking where pixels should be counted and included in the AP flux reading \cite{Craig_2021}. 
 
-A \codeword{CircularAnnulus} variant of the photometric method may also be applied to more finely distinguish between background sky pixels and object pixels. PSF photometry involves modeling more diffuse objects as a certain function to weight pixels before including them in the flux count. 
+A \codeword{CircularAnnulus} variant of the photometric method may also be applied to more finely distinguish between background sky pixels and object pixels. PSF photometry involves modeling more diffuse objects as a certain function to weight pixels before including them in the flux count \cite{Craig_2021}. 
 
-To reduce the complexity of the model behind determining relative flux values, we picked AP photometry due to a better transparency on how pixels are included in flux counts. While PSF photometry is robust in determining flux counts for diffuse objects, we determined that AP photometry would still be preferable to recording light curve data for pointlike sources of light. As shown in Figures X and Y, both star system images can be captured with a circular aperture.
+To reduce the complexity of the model behind determining relative flux values, we picked AP photometry due to a better transparency on how pixels are included in flux counts. While PSF photometry is robust in determining flux counts for diffuse objects, we determined that AP photometry would still be preferable to recording light curve data for pointlike sources of light. As shown in Figures 1 and 2, both star system images can be captured with a circular aperture consistently \cite{Craig_2021}.
 
 \begin{figure}[htpb]
     \begin{center}
-        % \input{figures/cc-com_reduced-example.pgf}
-        \includegraphics[width=0.7\textwidth]{figures/cc-com_reduced-example.png}
-        \includegraphics[width=0.7\textwidth]{figures/tz-boo_reduced-example.png}
+       \includegraphics[width=0.6\textwidth]{figures/cc-com_reduced-example.png}
     \end{center}
+    \label{fig:ccc-reduced-example}
+    \caption{}
+\end{figure}
+\begin{figure}[htpb]
+    \begin{center}
+        % \input{figures/cc-com_reduced-example.pgf}
+        \includegraphics[width=0.6\textwidth]{figures/tz-boo_reduced-example.png}
+    \end{center}
+    \label{fig:tzb-reduced-example}
     \caption{Images of V* CC Com and TZ Boo post-reduction. A circular aperture can consistently capture the shape of both star systems.}
 \end{figure}
 
+\newpage
 \section{Data Analysis}
 
 \subsection{Discussion of Fitting Methods}
@@ -83,7 +96,7 @@ Markov Chain Monte Carlo (MCMC) algorithms are particularly well-suited for anal
 
 MCMC is useful for our project as it is an effective tool for determining the fit parameters for light curve data, including calculation of the orbital period. Generally, the curves for time series analyses involve many parameters requiring adjustment to the observed data. This would be otherwise computationally expensive due to the high amount of dimensions needed to compute.
 
-However, due to the low count of data points we were able to obtain for either star system, we decided against using MCMC methods. MCMC methods require much higher data point count in order to reduce the uncertainty in the fit results. Additionally, it is difficult to determine whether MCMC methods have ``converged’’ onto a result, especially with a limited supply of data points.
+However, due to the low count of data points we were able to obtain for either star system, we decided against using MCMC methods. MCMC methods require much higher data point count in order to reduce the uncertainty in the fit results. Additionally, it is difficult to determine whether MCMC methods have ``converged’’ onto a result, especially with a limited supply of data points \cite{Ivezic2014}.
 
 Another method we considered to work with our relatively low data point count was using the \codeword{lmfit} python package. \codeword{lmfit} presents various regression analysis tools, including a sinusoidal model. Despite the package’s capabilities in accommodating a lower data point count than MCMC methods, the sinusoidal model had difficulties fitting with the given datasets. We attribute this difficulty to the ambiguity of where the data points exist on a given sinusoid. A string of data points could exist on the trough or a crest of a curve. Had we observed a longer portion of a period for our star systems, this ambiguity could have been reduced.
 
@@ -133,24 +146,56 @@ The data points were fit to a quadratic model curve of the form $at^2 + bt + c$.
 \caption{V* CC Com observation data taken on May 05, 2023. Exposure time for all images was \SI{15}{\s} and aperture radius 20.0 px.}
 \end{table}
 \subsection{Curve Fit Data}
-\begin{figure}[htpb]
-    \begin{center}
-        \input{figures/cc-com_lightcurve.pgf}
-        \input{figures/tz-boo_lightcurve.pgf}
-    \end{center}
-    \caption{Curve Fit comparison with results from Yakut and Eggleton (2005). Fit parameters determined by Taylor Expansion approximation.}
-\end{figure}
 
-Applying the Taylor Expansion approximation fit for a sinusoidal curve, we determined a period of 0.29 d for CC Com and 0.37 d for TZ Boo. Compared to results from Yakut and Eggleton (2005), there is a 31.8\% relative error for CC Com and 24.6\% relative error for TZ Boo. Further observations will be necessary to make more conclusions regarding the finer details of each light curve. More detail will be discussed in the section ``Discussion of Errors.’’
+Applying the Taylor Expansion approximation fit for a sinusoidal curve, we determined a period of 0.29 d for CC Com and 0.37 d for TZ Boo. Compared to results from Yakut and Eggleton (2005), there is a 31.8\% relative error for CC Com and 24.6\% relative error for TZ Boo. Further observations will be necessary to make more conclusions regarding the finer details of each light curve \cite{2011AJ....142...99C}. More detail will be discussed in the section ``Discussion of Errors.’’
 
 
 For instance, Christopolou et al. (2011) presents a light curve analysis of TZ Boo based on more data points. The work is able to demonstrate two distinct light curve minima. One minima is flat and shallower than the secondary rounded minima. They attribute the flat minima to a smaller star in the system transiting the larger star, while the deeper, rounded minima corresponds to the larger star occulting the smaller star \cite{2011AJ....142...99C}.
 
 Zhu et al. (2021) presents similar results but with CC Com. They demonstrated that CC Com has two distinct minima in the light curve. The shallower, rounded minima suggests a smaller star transiting a larger star, while the deeper, flat minima suggests occultation of the smaller star by the larger star. Zhu et al. (2021) was also able to determine the rate of change in the period of CC Com of about \SI{4.66(0.20)e-11}{\day\per\year} which is suspected to be due to mass transfer from the smaller to the larger star \cite{2021RAA....21...84Z}.
 
+\begin{figure}[htpb]
+    \begin{center}
+        \input{figures/cc-com_lightcurve.pgf}
+    \end{center}
+    \caption{}
+\end{figure}
+\begin{figure}[htpb]
+    \begin{center}
+        \input{figures/tz-boo_lightcurve.pgf}
+    \end{center}
+    \caption{Curve Fit comparison with results from Yakut and Eggleton (2005). Fit parameters determined by Taylor Expansion approximation.}
+\end{figure}
+
+\newpage
 \section{Discussion of Error}
 
+As mentioned earlier, we attribute most uncertainties in our results due to the lack of data points gathered during observations. Poor weather and dust conditions shortened our allotted observation times. On average, our observation sessions were cut down to at most 3 hours, which is less than half of the expected periods of both TZ Boo and CC Com. 
+
+Uncertainties in the flux measurements and time series analyses can be better qualified by employing a variety of methods. Using three photometric methods to calculate flux on the same subject could be used to check for agreement. Checking if the readings follow the same trend (after normalization) would be a sign that the relative flux values are accurate. Figure \ref{fig:flux-comp} demonstrates this analysis.
+
+Increasing the amount of data points gathered would also enable us to employ fit methods beyond Taylor approximations. Observing more phases of an eclipsing binary would reveal more details about the orbit and constituent stars that are not captured by a sinusoidal model. This means that non-sinusoidal effects, such as the two distinct minima presented in Zhu et al. (2021) and Christopolou et al. (2011), would likely be more apparent with more data points \cite{2011AJ....142...99C}, \cite{2021RAA....21...84Z}.
+
+\begin{figure}[htpb]
+    \begin{center}
+        \input{figures/cc-com_lightcurve-comp.pgf}
+    \end{center}
+    \caption{}
+\end{figure}
+\begin{figure}[htpb]
+    \begin{center}
+        \input{figures/tz-boo_lightcurve-comp.pgf}
+    \end{center}
+    \label{fig:flux-comp}
+    \caption{Photometry method comparison. More work is needed to understand the diverging relative fluxes. However, all three methods show agreement in the general changes in brightnesses over time.}
+\end{figure}
 \section{Conclusion and Further Work}
+
+This paper analyzed time series observations of eclipsing binary stars V* TZ Boo and V* CC Com using the APO ARCSAT telescope. Our orbital periods based off of curve fit data from our observations appear to corroborate with findings from Yakut and Eggleton (2005), though substantially more observations are needed.
+
+
+In future work, we intend to expand on the analysis of the light curves beyond determining the orbital periods of the star systems. Possible routes include the path taken by Zhu et al. (2021), where they determined the rate of change in the orbital period of CC Com \cite{2021RAA....21...84Z}. A way to expand upon this analysis is to model the mass transfer between the closely-orbiting stars to match the corresponding rate of change in the orbital period. Other considerations for further work include employing spectroscopy to measure the radial velocities of the stars as they orbit one another to gain a better idea of their motions and masses. Both these considerations have greater implications for studying the stellar evolution of binary stars.
+
 \newpage
 \bibliographystyle{ieeetr} 
 \bibliography{citations.bib}
